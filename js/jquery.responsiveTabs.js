@@ -445,6 +445,14 @@
         this.rotateInterval = 0;
     };
 
+
+    // Tools
+    function isLocal( anchor ) {
+        return anchor.hash.length > 1 &&
+            decodeURIComponent( anchor.href.replace( rhash, "" ) ) ===
+                decodeURIComponent( location.href.replace( rhash, "" ) );
+    }
+
     // Plugin wrapper
     $.fn.responsiveTabs = function ( options ) {
         var args = arguments;
